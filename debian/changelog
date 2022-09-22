@@ -1,0 +1,152 @@
+libopenshot-audio (0.2.0+dfsg1-4) unstable; urgency=medium
+
+  * Upload into unstable
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 29 Jun 2020 21:03:32 +0200
+
+libopenshot-audio (0.2.0+dfsg1-4~exp1) experimental; urgency=medium
+
+  * [43e53ad] Add libopenshot-audio-test-sound
+  * [b36258c] Remove unused license definitions for GPL-2+.
+  * [d3892b2] Drop multiarch for the binary
+  * [3d36e3b] Add autopkgtest
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 26 Jun 2020 23:07:22 +0200
+
+libopenshot-audio (0.2.0+dfsg1-3) unstable; urgency=medium
+
+  * [77cb64e] Use python3 instead of python3-minimal
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 24 Jun 2020 22:19:20 +0200
+
+libopenshot-audio (0.2.0+dfsg1-2) unstable; urgency=medium
+
+  * [2e4d061] Add python3-minimal for doc-building
+  * [2a69e0d] Add d/clean
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 24 Jun 2020 16:29:05 +0200
+
+libopenshot-audio (0.2.0+dfsg1-1) unstable; urgency=medium
+
+  * [d104d0a] Fix --build=all
+  * [a197898] Add API to not-installed (is installed from build-dir)
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 23 Jun 2020 22:40:04 +0200
+
+libopenshot-audio (0.2.0+dfsg1-1~exp3) experimental; urgency=medium
+
+  * [da50e75] Fix typo
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 23 Jun 2020 21:30:39 +0200
+
+libopenshot-audio (0.2.0+dfsg1-1~exp2) experimental; urgency=medium
+
+  * [761fdac] Add missing linkage to latomic
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 23 Jun 2020 21:14:02 +0200
+
+libopenshot-audio (0.2.0+dfsg1-1~exp1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * [007fd30] Use debhelper-compat instead of debian/compat
+
+  [ Anton Gladky ]
+  * [7adddd9] Remove some lines in d/copyright
+  * [176db40] Clean/Refresh patches
+  * [f934241] Change so-version to 7
+  * [5c0fa86] Set upstream metadata fields:
+    Bug-Database, Bug-Submit, Repository, Repository-Browse.
+  * [eeaac15] Set compat level 13
+  * [7c9125f] Set Standards-Version to 4.5.0
+  * [ea754a9] New upstream version 0.2.0+dfsg1. (Closes: #925755)
+  * [7b47ce3] Do not install openshot-audio-test-sound
+  * [c170db2] Add myself to uploaders
+  * [df03f4f] Rules-Requires-Root: no
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 19 Jun 2020 19:11:05 +0200
+
+libopenshot-audio (0.1.7+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 0.1.7+dfsg1
+    - Refresh patches
+  * Update Standards-Version to 4.2.1, no changes needed
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Sat, 22 Sep 2018 21:42:43 +0200
+
+libopenshot-audio (0.1.6+dfsg1-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Felipe Sateler ]
+  * Change maintainer address to debian-multimedia@lists.debian.org
+
+  [ Dr. Tobias Quathamer ]
+  * New upstream version 0.1.6+dfsg1
+  * Use debhelper v11
+  * Update to Standards-Version 4.2.0, no changes needed
+  * Fix wrong path of doc-base information
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Mon, 20 Aug 2018 22:09:32 +0200
+
+libopenshot-audio (0.1.5+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version 0.1.5+dfsg1
+  * Use dfsg as repack suffix
+  * Use HTTPS for upstream homepage
+  * Update Standards-Version to 4.1.1, no changes needed
+  * Bump library .so version to 6
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Sat, 18 Nov 2017 14:24:44 +0100
+
+libopenshot-audio (0.1.4+ds1-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Adopt package. (Closes: #872902)
+  * Update to Standards-Version 4.1.0
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Mon, 25 Sep 2017 15:00:20 +0200
+
+libopenshot-audio (0.1.4+ds1-1) experimental; urgency=medium
+
+  * Switch from git-dpm to gbp
+    - Drop git-dpm configuration
+    - Unapply the patch queue
+    - Add gbp configuration
+    - Refresh the patch queue
+    - Drop patch numbering
+  * New upstream version 0.1.4+ds1
+  * Bump soversion to 5
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Mon, 12 Jun 2017 22:16:14 +0100
+
+libopenshot-audio (0.1.2+ds1-3) experimental; urgency=medium
+
+  * Better integration with the system libraries
+    - New patch 0004-Use-the-system-libraries.patch
+    - Do not inject the system libraries via MAINT_APPEND
+    - Drop build dependency on pkg-config, no longer required
+  * Fix missing linkage with pthread / libdl directly upstream
+    - New patch 0005-Add-missing-linkage-with-pthread.patch
+    - New patch 0006-Add-missing-linkage-with-libdl.patch
+    - Do not inject pthread / libdl via MAINT_APPEND
+  * Fix arch-indep builds
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Thu, 02 Feb 2017 17:27:24 +0000
+
+libopenshot-audio (0.1.2+ds1-2) experimental; urgency=medium
+
+  * Fix FTBFS on !linux
+    - New patch 0003-Do-not-use-Linux-only-prctl.patch
+  * Support the nodoc build profile
+    - Add versioned build dependency on dpkg-dev,
+    - Mark documentation b-deps and packages as !nodoc
+    - Do not build the documentation when nodoc is requested
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 31 Jan 2017 00:18:58 +0000
+
+libopenshot-audio (0.1.2+ds1-1) experimental; urgency=low
+
+  * Initial release. (Closes: #810787)
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Thu, 15 Dec 2016 20:57:14 +0000

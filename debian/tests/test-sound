@@ -1,0 +1,7 @@
+#!/bin/sh
+# autopkgtest for libopenshot-audio
+# (C) 2020 Anton Gladky
+
+set -e
+
+/usr/bin/openshot-audio-test-sound

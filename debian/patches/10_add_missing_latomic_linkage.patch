@@ -1,0 +1,19 @@
+Description: Add missing linkage to latomic (failed on mipsel and armel)
+Author: Anton Gladky <gladk@debian.org>
+Last-Update: 2020-06-23
+
+Index: libopenshot-audio/CMakeLists.txt
+===================================================================
+--- libopenshot-audio.orig/CMakeLists.txt
++++ libopenshot-audio/CMakeLists.txt
+@@ -219,7 +219,9 @@ target_link_libraries(openshot-audio PUB
+ 
+ target_link_libraries(openshot-audio PUBLIC
+ 		${CMAKE_DL_LIBS}
+-		${JUCE_PLATFORM_SPECIFIC_LIBRARIES} )
++		${JUCE_PLATFORM_SPECIFIC_LIBRARIES}
++		atomic
++    )
+ 
+ # PROCESS SUB-DIRECTORIES
+ add_subdirectory(src)

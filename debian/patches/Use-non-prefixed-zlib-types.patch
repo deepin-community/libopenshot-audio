@@ -1,0 +1,48 @@
+From: Ghislain Antony Vaillant <ghisvail@gmail.com>
+Date: Thu, 15 Dec 2016 19:52:59 +0000
+Subject: Use non-prefixed zlib types
+
+---
+ .../modules/juce_core/zip/juce_GZIPCompressorOutputStream.cpp       | 4 ++--
+ .../modules/juce_core/zip/juce_GZIPDecompressorInputStream.cpp      | 6 +++---
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+Index: libopenshot-audio/JuceLibraryCode/modules/juce_core/zip/juce_GZIPCompressorOutputStream.cpp
+===================================================================
+--- libopenshot-audio.orig/JuceLibraryCode/modules/juce_core/zip/juce_GZIPCompressorOutputStream.cpp
++++ libopenshot-audio/JuceLibraryCode/modules/juce_core/zip/juce_GZIPCompressorOutputStream.cpp
+@@ -81,8 +81,8 @@ private:
+         {
+             stream.next_in   = const_cast<uint8*> (data);
+             stream.next_out  = buffer;
+-            stream.avail_in  = (z_uInt) dataSize;
+-            stream.avail_out = (z_uInt) sizeof (buffer);
++            stream.avail_in  = (uInt) dataSize;
++            stream.avail_out = (uInt) sizeof (buffer);
+ 
+             auto result = isFirstDeflate ? deflateParams (&stream, compLevel, strategy)
+                                          : deflate (&stream, flushMode);
+Index: libopenshot-audio/JuceLibraryCode/modules/juce_core/zip/juce_GZIPDecompressorInputStream.cpp
+===================================================================
+--- libopenshot-audio.orig/JuceLibraryCode/modules/juce_core/zip/juce_GZIPDecompressorInputStream.cpp
++++ libopenshot-audio/JuceLibraryCode/modules/juce_core/zip/juce_GZIPDecompressorInputStream.cpp
+@@ -132,8 +132,8 @@ public:
+         {
+             stream.next_in  = data;
+             stream.next_out = dest;
+-            stream.avail_in  = (z_uInt) dataSize;
+-            stream.avail_out = (z_uInt) destSize;
++            stream.avail_in  = (uInt) dataSize;
++            stream.avail_out = (uInt) destSize;
+ 
+             switch (inflate (&stream, Z_PARTIAL_FLUSH))
+             {
+@@ -142,7 +142,7 @@ public:
+                 // deliberate fall-through
+             case Z_OK:
+                 data += dataSize - stream.avail_in;
+-                dataSize = (z_uInt) stream.avail_in;
++                dataSize = (uInt) stream.avail_in;
+                 return (int) (destSize - stream.avail_out);
+ 
+             case Z_NEED_DICT:

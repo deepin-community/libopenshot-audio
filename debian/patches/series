@@ -1,0 +1,2 @@
+Use-non-prefixed-zlib-types.patch
+10_add_missing_latomic_linkage.patch

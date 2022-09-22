@@ -1,0 +1,74 @@
+Source: libopenshot-audio
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders: Dr. Tobias Quathamer <toddy@debian.org>,
+           Anton Gladky <gladk@debian.org>
+Rules-Requires-Root: no
+Section: libs
+Priority: optional
+Build-Depends: cmake,
+               debhelper-compat (= 13),
+               libasound2-dev,
+               libflac-dev,
+               libfreetype6-dev,
+               libjpeg-dev,
+               libpng-dev,
+               libvorbis-dev,
+               libxcursor-dev,
+               libxinerama-dev,
+               libxrandr-dev,
+               zlib1g-dev
+Build-Depends-Indep: doxygen <!nodoc>,
+                     python3 <!nodoc>
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/multimedia-team/libopenshot-audio
+Vcs-Git: https://salsa.debian.org/multimedia-team/libopenshot-audio.git
+Homepage: https://www.openshot.org/
+
+Package: libopenshot-audio7
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: library for high-quality audio editing
+ The OpenShot audio library is a program which allows high-quality
+ editing and playback of audio based on the JUCE library.
+ .
+ This package provides the shared library.
+
+Package: libopenshot-audio-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libopenshot-audio7 (= ${binary:Version}),
+         ${misc:Depends}
+Suggests: libopenshot-audio-doc <!nodoc>
+Description: development files for the OpenShot audio library
+ The OpenShot audio library is a program which allows high-quality
+ editing and playback of audio based on the JUCE library.
+ .
+ This package provides the development files.
+
+Package: libopenshot-audio-doc
+Architecture: all
+Multi-Arch: foreign
+Section: doc
+Depends: ${misc:Depends}
+Description: documentation for the OpenShot audio library
+ The OpenShot audio library is a program which allows high-quality
+ editing and playback of audio based on the JUCE library.
+ .
+ This package provides the documentation.
+Build-Profiles: <!nodoc>
+
+Package: libopenshot-audio-test-sound
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: plays test sound using libopenshot-audio
+ The OpenShot audio library is a program which allows high-quality
+ editing and playback of audio based on the JUCE library.
+ .
+ This package provides the test binary to test the sound using
+ libopenshot-audio.
