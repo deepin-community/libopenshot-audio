@@ -1,3 +1,9 @@
+libopenshot-audio (0.2.0+dfsg1-4deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 20 Sep 2024 12:11:05 +0800
+
 libopenshot-audio (0.2.0+dfsg1-4) unstable; urgency=medium
 
   * Upload into unstable
